@@ -164,7 +164,7 @@ class Shoutout {
 		if ( ! isset($this->cache['shoutouts'][$url_title]))
 		{
 			$query = $DB->query('SELECT wt.title, w.blog_url FROM exp_weblog_titles wt, exp_weblogs w
-			                       WHERE wt.url_title = "'.$url_title.'" LIMIT 1');
+			                       WHERE wt.url_title = "'.$url_title.'" AND wt.weblog_id = w.weblog_id LIMIT 1');
 
 			if ($query->num_rows)
 			{
