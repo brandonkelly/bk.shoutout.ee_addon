@@ -1,4 +1,6 @@
-h1. Shoutout
+
+Shoutout
+======================================================================
 
 Link to entries using {{url_title}} or {{"Custom Title":url_title}} syntax.
 
@@ -6,6 +8,6 @@ Requires ExpressionEngine 1.6.7+
 
 Generates links like so:
 
-<code>[weblog url] / [entry url title]</code>
+`[weblog url] / [entry url title]`
 
 Site's not set up that way? Bummer!
