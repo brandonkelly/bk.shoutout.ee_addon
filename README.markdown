@@ -2,7 +2,7 @@
 Shoutout
 ======================================================================
 
-Link to entries using {{url_title}} or {{"Custom Title":url_title}} syntax.
+Link to entries using `{{url_title}}` or `{{"Custom Title":url_title}}` syntax.
 
 Requires ExpressionEngine 1.6.7+
 
