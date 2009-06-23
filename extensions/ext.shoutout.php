@@ -15,7 +15,7 @@ if ( ! defined('EXT')) exit('Invalid file request');
 class Shoutout {
 
 	var $name           = 'Shoutout';
-	var $version        = '0.0.1';
+	var $version        = '0.0.2';
 	var $description    = 'Link to entries using {{url_title}} or {{"Custom Title":url_title}} syntax';
 	var $settings_exist = 'n';
 	var $docs_url       = 'http://brandon-kelly.com/';
@@ -144,7 +144,7 @@ class Shoutout {
 		{
 			if (substr($field_id, 0, 9) == 'field_id_')
 			{
-				$field_data = preg_replace_callback('/\{\{ ?("([^"]+)":)?([\w-]+) ?\}\}/', array(&$this, 'replace_shoutout'), $field_data);
+				$field_data = preg_replace_callback('/\{\{ ?("([^"]+)":)?([\w-]+)((\/[\w-]+)?(#[\w-]+)?) ?\}\}/', array(&$this, 'replace_shoutout'), $field_data);
 			}
 		}
 
@@ -182,7 +182,7 @@ class Shoutout {
 		if (is_array($this->cache['shoutouts'][$url_title]))
 		{
 			if ( ! $title) $title = $this->cache['shoutouts'][$url_title][1];
-			return '<a href="'.$this->cache['shoutouts'][$url_title][0].'">'.$title.'</a>';
+			return '<a href="'.$this->cache['shoutouts'][$url_title][0].$matches[4].'">'.$title.'</a>';
 		}
 
 		return $matches[0];
